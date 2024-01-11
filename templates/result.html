@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction Results</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('/static/images/crop.jpg') center/cover fixed; /* Replace 'background.jpg' with your image URL */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .result-container {
+            text-align: center;
+            background-color: rgba(26, 129, 43, 0.774); /* Adjust the background opacity */
+            padding: 20px;
+            border-radius: 10px;
+             /* Apply blur to the background of the container */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+        #go-back-btn {
+            font-size: 16px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Results of the Crop Prediction</h1>
+        <p id="Result">{{ res }}</p>
+        <a id="go-back-btn" href="/">Go back to Home Page</a>
+    </div>
+    </div>
+</body>
+</html>
+
