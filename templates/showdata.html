@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Data Table</title>
     <style>
         body {
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('/static/images/crop.jpg') center/cover fixed; 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
         table {
             width: 80%;
             margin: 20px auto;
             border-collapse: collapse;
+            animation: fadeIn 1s ease; /* Animation for the table */
+            background-color: rgba(91, 148, 58, 0.911); /* Transparent white background */
+            color: white;
+            overflow-x: auto; /* Enable horizontal scrolling for small screens */
         }
 
         th, td {
@@ -23,12 +35,25 @@
         }
 
         th {
-            background-color: #555;
+            background-color: #236113;
             color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        #go-back-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #496a80;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none; /* Remove default anchor underline */
         }
 
         tr:hover {
-            background-color: #444;
+            background-color: #236113;
             transition: background-color 0.3s ease;
         }
 
@@ -40,12 +65,7 @@
                 opacity: 1;
             }
         }
-
-        table {
-            animation: fadeIn 1s;
-        }
     </style>
-    <title>Crop Data Table</title>
 </head>
 <body>
 
@@ -76,7 +96,7 @@
                 </tr>
             {% endfor %}
         </tbody>
-    </table>
-
+    </table>    
+    <a id="go-back-btn" href="/">Go back to Home Page</a>
 </body>
 </html>

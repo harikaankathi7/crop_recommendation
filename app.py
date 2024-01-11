@@ -4,10 +4,12 @@ import sqlite3
 
 app= Flask(__name__)
 
+# home page
 @app.route('/')
 def home():
     return render_template('home.html')
 
+# predictions page
 @app.route('/predict',methods=['GET','POST'])
 def prediction():
     print(request.method)
@@ -31,15 +33,16 @@ def prediction():
         return  render_template("result.html",res=res[0])
     else:
         return render_template('make-predictions.html')
-
+    
+# show data page
 @app.route('/show-data',methods =['GET','POST'])    
 def showdata():
-    conn = sqlite3.connect('cropdatabase.db')
+    conn = sqlite3.connect('cropdata.db')
     cur = conn.cursor()
     cur.execute('SELECT * FROM CROPS;')
     x = cur.fetchall()
     #print(data)
-    li  = []
+    list1  = []
     for i in x:
         p = {}
         p['Nitrogen'] = i[0]
@@ -50,8 +53,8 @@ def showdata():
         p['Ph'] = i[5]
         p['Rainfall'] = i[6]
         p['Result'] = i[7]
-        li.append(p)
-    return render_template('showdata.html',data = li)
+        list1.append(p)
+    return render_template('showdata.html',data = list1)
 
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=5050)
