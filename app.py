@@ -34,7 +34,7 @@ def prediction():
 
 @app.route('/show-data',methods =['GET','POST'])    
 def showdata():
-    conn = sqlite3.connect('cropdatabase.db')
+    conn = sqlite3.connect('cropdata.db')
     cur = conn.cursor()
     cur.execute('SELECT * FROM CROPS;')
     x = cur.fetchall()
