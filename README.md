@@ -6,5 +6,6 @@ https://crop-recommendation-wdn4.onrender.com/
 ## Technologies used
 Python  
 scikit-learn  
+HTML, CSS(Frontend)  
 sqlite3  
 Flask(deployment)
