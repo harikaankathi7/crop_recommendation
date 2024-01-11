@@ -32,7 +32,7 @@ def prediction():
     else:
         return render_template('make-predictions.html')
 
-@app.route('/showdata.html',methods =['GET','POST'])    
+@app.route('/show-data',methods =['GET','POST'])    
 def showdata():
     conn = sqlite3.connect('cropdatabase.db')
     cur = conn.cursor()
